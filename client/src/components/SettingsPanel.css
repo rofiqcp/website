@@ -1,0 +1,267 @@
+.settings-panel {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8, #6a4190);
+}
+
+.btn-test {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.btn-test:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+}
+
+.btn-test.testing {
+  background: linear-gradient(135deg, #FF9800, #f57c00);
+}
+
+.btn-test.connected {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.btn-test.failed {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #FF9800, #f57c00);
+  color: white;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #f57c00, #ef6c00);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #1976D2, #1565C0);
+}
+
+.btn-secondary {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(145deg, #e0e0e0, #d0d0d0);
+}
+
+.system-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #333;
+}
+
+.info-value.status-connected {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.info-value.status-disconnected {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.device-status {
+  margin-top: 10px;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.status-label {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.status-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.logs-container {
+  max-height: 200px;
+  overflow-y: auto;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #e9ecef;
+}
+
+.log-entry {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #333;
+  padding: 4px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.no-logs {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
+.logs-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.logs-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.logs-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.logs-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .btn {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .status-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}

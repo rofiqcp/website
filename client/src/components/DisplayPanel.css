@@ -1,0 +1,230 @@
+.display-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.gauge-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.variable-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.lamp-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+  box-shadow: 5px 5px 10px #d0d0d0, -5px -5px 10px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.lamp-bulb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lamp-bulb.on {
+  background: radial-gradient(circle, #ffeb3b, #ffc107);
+  color: #333;
+  box-shadow: 0 0 20px rgba(255, 235, 59, 0.6), inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.lamp-bulb.off {
+  background: linear-gradient(145deg, #666, #555);
+  color: #999;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 235, 59, 0.6), inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 235, 59, 0.8), inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.gauge-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+  box-shadow: 5px 5px 10px #d0d0d0, -5px -5px 10px #ffffff;
+}
+
+.gauge-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #e0e0e0 0deg, #667eea 0deg, #e0e0e0 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 5px 5px 10px #d0d0d0, inset -5px -5px 10px #ffffff;
+}
+
+.gauge-inner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px #d0d0d0, -5px -5px 10px #ffffff;
+}
+
+.gauge-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.gauge-unit {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.gauge-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.variable-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+  box-shadow: 5px 5px 10px #d0d0d0, -5px -5px 10px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.variable-display:hover {
+  transform: translateY(-2px);
+}
+
+.variable-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.variable-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.variable-description {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.variable-value-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.variable-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.variable-unit {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.status-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.lamp-indicator .status-text {
+  color: #333;
+}
+
+.lamp-bulb.on + .control-label + .status-text {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.lamp-bulb.off + .control-label + .status-text {
+  color: #f44336;
+}
+
+.slider-marks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .display-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .gauge-container {
+    gap: 15px;
+  }
+  
+  .variable-container {
+    gap: 10px;
+  }
+  
+  .gauge-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .gauge-inner {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .variable-display {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .variable-value-container {
+    align-items: center;
+  }
+}
